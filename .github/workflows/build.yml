@@ -20,7 +20,9 @@ jobs:
           node-version: 20
       - name: Install Dependencies
         run: yarn install
-      - run: declare -x ESLINT_USE_FLAT_CONFIG=false
-      - run: export
+      - name: Set env
+        run: echo "ESLINT_USE_FLAT_CONFIG=false" >> $GITHUB_ENV
+      - name: Echo 
+        run: echo $ESLINT_USE_FLAT_CONFIG
       - name: Run yarn lint
         run: yarn lint
