@@ -22,7 +22,7 @@ jobs:
         run: yarn install
       - name: Set env
         run: echo "ESLINT_USE_FLAT_CONFIG=false" >> $GITHUB_ENV
-      - name: Echo 
+      - name: Echo ESLINT_USE_FLAT_CONFIG
         run: echo $ESLINT_USE_FLAT_CONFIG
       - name: Run yarn lint
         run: yarn lint
