@@ -20,5 +20,6 @@ jobs:
           node-version: 20
       - name: Install Dependencies
         run: yarn install
+      - run: export ESLINT_USE_FLAT_CONFIG=false
       - name: Run yarn lint
-        run: yarn lint --config .eslintrc.json
+        run: yarn lint
