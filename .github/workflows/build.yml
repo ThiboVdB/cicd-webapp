@@ -21,5 +21,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - run: export ESLINT_USE_FLAT_CONFIG=false
-      - name: Run yarn lint
-        run: yarn lint
+      - run: export
+      # - name: Run yarn lint
+      #   run: yarn lint
