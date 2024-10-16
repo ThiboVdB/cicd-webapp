@@ -1,0 +1,32 @@
+services:
+  webapp:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      - MYSQL_URL=mysql://root@database:3306/animals
+    depends_on:
+      - database
+    
+  database:
+    image: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=animals
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - data:/var/lib/mysql/
+
+  tests:
+    image: webapp:latest
+    environment:
+      - API_URL=http://webapp:3000
+    depends_on:
+      - webapp
+      - database
+
+volumes:
+  data:
