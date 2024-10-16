@@ -20,7 +20,7 @@ jobs:
           node-version: 20
       - name: Install Dependencies
         run: yarn install
-      - run: export ESLINT_USE_FLAT_CONFIG=false
+      - run: declare -x ESLINT_USE_FLAT_CONFIG=false
       - run: export
-      # - name: Run yarn lint
-      #   run: yarn lint
+      - name: Run yarn lint
+        run: yarn lint
