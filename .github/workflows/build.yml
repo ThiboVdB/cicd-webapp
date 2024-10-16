@@ -21,4 +21,4 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Run yarn lint
-        run: yarn lint .eslintrc.json       
+        run: yarn lint -c .eslintrc.json       
