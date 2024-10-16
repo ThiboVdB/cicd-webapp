@@ -20,6 +20,6 @@ jobs:
           node-version: 20
       - name: Install Dependencies
         run: yarn install
-      - run: yarn eslint --version
-      # - name: Run yarn lint
-      #   run: yarn lint        
+      - run: yarn add eslint@latest
+      - name: Run yarn lint
+        run: yarn lint        
