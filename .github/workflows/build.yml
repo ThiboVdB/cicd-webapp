@@ -14,3 +14,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.4
+        with:
+          node-version: 20
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run yarn lint
+        run: yarn lint        
