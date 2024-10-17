@@ -35,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v6.9.0
         with:
           push: true
-          tag: thibovdb256/webapp:latest
+          tags: thibovdb256/webapp:latest
