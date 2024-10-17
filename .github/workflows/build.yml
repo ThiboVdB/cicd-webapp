@@ -26,3 +26,8 @@ jobs:
         run: echo $ESLINT_USE_FLAT_CONFIG
       - name: Run yarn lint
         run: yarn lint
+      - name: Build (but not) push Docker image     
+        uses: docker/build-push-action@v6.9.0
+        with:
+          push: false
+          tag: ThiboVdB256/webapp:latest
