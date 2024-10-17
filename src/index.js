@@ -1,9 +1,9 @@
 import express from 'express';
 import Boom from '@hapi/boom';
-import morgan from 'morgan'
-import persistence from './persistence/index.js'
+import morgan from 'morgan';
+import persistence from './persistence/index.js';
 
-const PORT = 3000
+const PORT = 3000;
 
 function asyncMiddleware(fn) {
   return (req, res, next) => {
@@ -23,7 +23,7 @@ app.use((_, res, next) => {
 });
 
 app.get('/', (_, res) => {
-  res.send('It works, good job! You should try <code>/animals</code> or <code>/animals/:id</code>. Optimizing my image!');
+  res.send('It works, good job! You should try <code>/animals</code> or <code>/animals/:id</code>.');
 });
 
 app.get('/animals', asyncMiddleware(async (_, res) => {
@@ -42,7 +42,7 @@ app.use((err, _, res, next) => {
       error: err.message,
     });
   next();
-})
+});
 
 persistence
   .initialize()
